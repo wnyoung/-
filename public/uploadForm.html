@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<!--
+	Epilogue by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="ko">
+	<head>
+		<title>Bridge</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+		<link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+		<style>
+		  .icon {
+			width: 100%;
+			height: 100%;
+			visibility: hidden;
+			justify-content: center;
+			align-items: center;
+      margin-bottom : 10px;
+		  }
+    	</style>
+	</head>
+	<body>
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<nav id="nav">
+				<ul>
+					<li><a href="http://203.153.147.59:5000/">Home</a></li>
+					<li><a href="http://203.153.147.59:5000/uploadForm">Bridge Service</a></li>
+				</ul>
+			</nav>
+			<div class="inner">
+				<a href="http://203.153.147.59:5000/"><h1>Bridge</h1></a>
+				<p>청각장애인을 위한 화자 구분 서비스</a></p>
+			</div>
+		</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Banner -->
+					<section id="intro" class="main">
+						<div id="start">
+							<h2>step1. 업로드 </h2>
+						</div>
+						<form action='speakername' method='post' enctype="multipart/form-data" id="form">
+							<p>.video: <input type='file' name='userfile' id='file_uploads' accept="video/*" /></p>
+							<p>.data: <input type='file' name='userfile' id='file_uploads' accept=".data" /></p>
+							<p>.cfg:  <input type='file' name='userfile' id='file_uploads' accept=".cfg" /></p>
+							<p>.weight:  <input type='file' name='userfile' id='file_uploads' accept=".weights" /></p>
+							<p>.names:  <input type='file' name='userfile' id='file_uploads' accept=".names" /></p>
+							<br>
+							<div class='icon' id="favcon">
+							  <i class="fas fa-spinner fa-xs fa-spin"></i>
+					  		</div>
+							<input type='submit' id='btn' class="button big" value="upload file" onclick="buttonClick()"/>
+						</form>
+					</section>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+      <script>
+        function buttonClick(){
+          var btnElement = document.getElementById('btn');
+          var form = document.getElementById('form');
+          btnElement.disabled = true;
+          var icon = document.getElementById('favcon');
+          icon.style.visibility = "visible";
+          form.submit();
+        }
+      </script>
+
+	</body>
+</html>

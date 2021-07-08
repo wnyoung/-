@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Bridge</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<nav id="nav">
+			<ul>
+				<li><a href="http://203.153.147.59:5000/">Home</a></li>
+				<li><a href="http://203.153.147.59:5000/uploadForm">Bridge Service</a></li>
+			</ul>
+		</nav>
+			<div class="inner">
+				<a href="http://203.153.147.59:5000/"><h1>Bridge</h1></a>
+				<p>청각장애인을 위한 화자 구분 서비스</a></p>
+			</div>
+		</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Banner -->
+					<section id="intro" class="main">
+						<div id="start">
+							<h2>step2. 화자 이름 입력</h2>
+						</div>
+						<% for(var i = 0; i < speakerlist.length; i++){ %>
+							<% console.log(speakerlist[i]) %>
+						<% } %>
+						<video src="output.mp4" autoplay controls width="600px">
+							<track src=<%= videofilename + ".vtt" %> kind="subtitles" srclang="en" label="vtt자막" default>
+							<track src=<%= videofilename + "speaker.vtt" %> kind="subtitles" srclang="en" label="speakerTag자막">
+							Sorry, your browser doesn't support embedded videos
+						</video>
+						<br>
+						<br>
+						<br>
+						<!--
+						<ul class="actions">
+							<li><a href="http://203.153.147.59:5000/videodownload" class="button big">영상 다운로드</a></li>
+							<li><a href="http://203.153.147.59:5000/subdownload" class="button big">자막 다운로드</a></li>
+						</ul>
+						-->
+						<form action='speaker' method='post'>
+							<% for(var i = 0; i < speakerlist.length; i++){ %>
+								<input type='text' name="<%- speakerlist[i] %>" placeholder="<%- 'speaker' + speakerlist[i] %>">
+							<% } %>
+							<br>
+							<input type='submit' value="화자 이름 변경"/>
+							<br>
+					</section>
+			</div>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

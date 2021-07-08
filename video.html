@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Bridge - stt</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+	<h1>2. 영상 확인 및 자막 변경</h1>
+	
+	<div>
+		<div id="videodiv">
+		<figure id="videoContainer" data-fullscreen="false">
+			<video id="video" controls preload="metadata">
+				<source src="video/sample.mp4" type="video/mp4">
+				<track label="English" kind="subtitles" srclang="en" src="subtitles/vtt/sample.vtt" default>
+			</video>
+			<div id="video-controls" class="controls" data-state="hidden">
+				<button id="playpause" type="button" data-state="play">Play/Pause</button>
+				<button id="stop" type="button" data-state="stop">Stop</button>
+				<div class="progress">
+					<progress id="progress" value="0" min="0">
+						<span id="progress-bar"></span>
+					</progress>
+				</div>
+				<button id="mute" type="button" data-state="mute">Mute/Unmute</button>
+				<button id="volinc" type="button" data-state="volup">Vol+</button>
+				<button id="voldec" type="button" data-state="voldown">Vol-</button>
+				<button id="fs" type="button" data-state="go-fullscreen">Fullscreen</button>
+				<button id="subtitles" type="button" data-state="subtitles">CC</button>
+			</div>
+		</figure>
+		</div>
+
+		<div id="sub">
+			WEBVTT
+
+			00:00:02.200 --> 00:00:05.500
+			Transcript: 머리
+
+			00:00:08.300 --> 00:00:10.700
+			Transcript:  왜 여기 있나
+
+			00:00:12.000 --> 00:00:13.600
+			Transcript:  이상하지
+
+			00:00:16.700 --> 00:00:38.000
+			Transcript:  여기 있는 사람들 여긴 병원이 자나 아픈 사람들이 모이는 사람 선생님 근처 했더니
+		</div>
+	</div>
+	<script src="js/video-player.js"></script>
+</body>
+</html>
